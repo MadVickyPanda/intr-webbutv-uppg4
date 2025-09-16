@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -8,13 +9,31 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <div class="container">
+        <div class="box"></div>
+        <div class="todo-app">
+            <div class="title">
+                <h2>To do List</h2>
+            </div>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add your text">
+                <button onclick="addTask()">Add text</button>
+            </div>
 
+            <ul id="list-container" class="scroll">
+                <li>task1</li>
+                <li>task2</li>
+            </ul>
+        </div>
+    </div>
+    </div>
 
-
-
-
-    <script src="script.js"></script>
 </body>
+
+<script src="script.js"></script>
+</body>
+
 </html>

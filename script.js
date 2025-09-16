@@ -2,6 +2,7 @@ const todoForm = document.getElementById("todo-form");
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 
+
 todoForm.addEventListener("submit", function (event) {
     event.preventDefault();
     const newTask = todoInput.value;
@@ -12,6 +13,7 @@ todoForm.addEventListener("submit", function (event) {
     }
     todoInput.value = "";
     addTask(newTask);
+    updateCounters();
 });
 
 function addTask(task) {
@@ -23,6 +25,7 @@ function addTask(task) {
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
     listItem.appendChild(checkBox);
+    
 
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
@@ -32,14 +35,16 @@ function addTask(task) {
 
 
 
-    checkBox.addEventListener("change", function () {
+    checkBox.addEventListener("change",function ()  {
         if (this.checked) {
             taskText.style.textDecoration = "line-through";
-        } else {
+        } 
+        else {
             taskText.style.textDecoration = "none";
         }
+        
     });
-
+    
     deleteButton.addEventListener("click", function () {
         todoList.removeChild(listItem);
     });
